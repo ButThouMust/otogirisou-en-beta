@@ -2,6 +2,7 @@
 (Currently) beta patches for an English translation of Otogirisou for Super Famicom.
 
 **Patches from here are _not_ to be reuploaded to other sites, including but not limited to romhacking.net.**
+Note: I mean no ill will against romhacking.net with this. I just don't want the patch to be uploaded/published until it is finished.
 
 # How to patch
 
