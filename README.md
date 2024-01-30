@@ -1,3 +1,7 @@
+![title screen](images/01%20title%20screen.png)   ![sample gameplay](images/04%20normal%20text.png)
+
+![file select](images/02%20file%20select.png)    ![name entry](images/03%20name%20entry.png)
+
 # otogirisou-en-beta
 (Currently) beta patches for an English translation of Otogirisou for Super Famicom.
 
@@ -30,9 +34,9 @@ Otogirisou is a single player ~~visual~~ sound novel game from Chunsoft (now Spi
 
 You must first name the protagonist (up to 6 characters). He has no default name in the Super Famicom version but is named 公平 "Kouhei" by default in this game's PlayStation remake. The basic plot is that he and his girlfriend 奈美 "Nami" are driving home from a date, when circumstances force them to take shelter from a rainstorm in a creepy mansion in the middle of nowhere. It soon becomes apparent that some kind of presence inside clearly doesn't want them there.
 
-The gameplay, so to speak, consists of you reading text and picking a choice from a list when the game presents you with a branching path. This continues until you reach one of several available endings. The game will automatically save your progress whenever you finish a screen of text.
+The gameplay, so to speak, consists of reading text and picking a choice from a list when the game presents you with a branching path. This continues until you reach one of several available endings. The game will automatically save your progress whenever you finish a screen of text or reach the credits.
 
-The replayability for this game comes from the different paths you can take. On repeat playthroughs, the game will sometimes present you with new options to pick for choices, which is to say, a choice originally with two options may give you three or even four options later on.
+The replayability for this game comes from the different paths you can take. Plus, on repeat playthroughs, the game will sometimes present you with new options to pick for choices, which is to say, a choice you first found with two options may give you three or even four options later on.
 
 > [!WARNING]
 > If you would like to carry over your save file to the next beta version, you must:
@@ -42,9 +46,20 @@ The replayability for this game comes from the different paths you can take. On 
 >   - *Make a copy* of your .srm file from, say, `beta_v1.srm` to `beta_v2.srm`.
 >   - When you know for sure that your save data has carried over, you can delete the ROM and save data for the old version of the patch.
 
+# Features added for patch
+- A mostly, but not fully, complete English translation. **Please let me know if you would like to contribute to the translation!**
+- A more aesthetically pleasing English font than what was originally in the game.
+  - Bypassing of the font compression scheme, to more easily add characters if needed.
+- Translation of all important graphics that contain Japanese text.
+- Text kerning, both horizontally and vertically.
+- A linebreaking routine better suited for English text, if imperfect.
+- Option to let the player enable or disable honorifics.
+  - Normally, I would leave them out, but there is an interesting argument for keeping them in. 
+  - Nami uses a different one for you on each playthrough, which you can technically classify as a "game mechanic" of sorts.
+
 # Submitting issues
 
-For general suggestions or any issues like bad formatting, please create an issue in this repository, *with a screenshot* of where you found the issue.
+For general suggestions or any issues like bad formatting of game text, please create an issue in this repository, *with a screenshot* of where you found the issue.
 
 Issues in order from most severe to least concern (current priorities in *italics*; list will be added to as needed):
 - Game crash or softlock
@@ -68,11 +83,9 @@ Issues in order from most severe to least concern (current priorities in *italic
 
 # Checklist of things to do
 - Make a more user-friendly option to enable or disable honorifics.
-  - TL;DR Nami uses a different one for you each playthrough, so this technically could be considered a game mechanic. Were they not dynamic, I would have just left them out entirely.
-  - Currently, I have hard-coded the option to "on," with disabling it requiring a hex editor to change a certain byte in the ROM file to `00`.
+  - Currently, this works by having two different patches, .
   - In the future, I'd like to make it so you can use the otherwise unused R button to enable or disable it.
-- Fill out the font more, add more characters to the name entry screen.
-  - Please suggest any characters you'd like to be added, within reason.
-- Make the font system more robust against adding new characters between patch versions.
+- Fill out the font more.
+  - Please suggest any characters you'd like to be added.
 - Set more consistent spacing on the file management prompts like `Start`, `Delete`, `Cancel`, `Confirm`, `Resume`, and `Restart`.
-- Fix above mentioned choice recoloring issue.
+- Fix the above mentioned choice recoloring issue.
