@@ -4,13 +4,14 @@
 
 # otogirisou-en-beta
 (Currently) beta patches for an English translation of Otogirisou for Super Famicom.
+The main bottleneck to a full release is getting the whole script translation peer-reviewed. **Please let me know if you would like to contribute to the translation!** (related [RHDN forum post](https://www.romhacking.net/forum/index.php?topic=38663.0))
 
 **Patches from here are _not_ to be reuploaded to other sites, including but not limited to romhacking.net.**
 Note: I mean no ill will against romhacking.net with this. I simply don't want the patch to be uploaded/published anywhere else until it is finished.
 
 # How to patch
 
-You will need an unheadered 1 MB ROM image of the game, which has this specification in the [No-Intro database](https://datomatic.no-intro.org/index.php?page=show_record&s=49&n=1880):
+Go to the [releases page](https://github.com/ButThouMust/otogirisou-en-beta/releases) to download the most recent patch version. You will need an unheadered 1 MB ROM image of the game, which has this specification in the [No-Intro database](https://datomatic.no-intro.org/index.php?page=show_record&s=49&n=1880):
 ```
 CRC32:   8e4befd0
 MD5:     ae1e9c92d0b7e6dba6c6007d99c9c3f4
@@ -22,7 +23,7 @@ Use any patching utility that supports the BPS format. It should produce a 1.5 M
 
 # How to play the game
 
-Otogirisou is a single player ~~visual~~ sound novel game from Chunsoft (now Spike Chunsoft). It was both their debut title as a game publisher, in 1992, and the first entry in their sound novel series, which includes games such as Kamaitachi no Yoru, Machi, and 428 Shibuya Scramble. The controls are fairly simple:
+Otogirisou is a single player ~~visual~~ sound novel game from Chunsoft (now Spike Chunsoft). It was both their debut title as a game publisher, in 1992, and the first entry in their sound novel series. Other entries include Kamaitachi no Yoru, Machi, Imabikisou, and 428 Shibuya Scramble. The controls are fairly simple:
 - A: Confirm menu selection, advance text
 - B: Cancel menu selection, advance text
 - X: Scroll a page of text back, if available
@@ -49,7 +50,7 @@ The replayability for this game comes from the different paths you can take. Plu
 >   - When you know for sure that your save data has carried over, you can delete the ROM and save data for the old version of the patch.
 
 # Features added for patch
-- An English translation I estimate to be 95% complete. **Please let me know if you would like to contribute to the translation!**
+- An English translation I estimate to be 95% complete.
   - Translated and restored two screens of text that were unused/inaccessible in the original game.
 - A more aesthetically pleasing English font than what was originally in the game.
   - Bypassing of the font compression scheme, to more easily add characters if needed.
@@ -60,12 +61,12 @@ The replayability for this game comes from the different paths you can take. Plu
   - Some graphics do have Japanese text but were kept as-is because the novel text explains them fine.
 - Option to let the player enable or disable honorifics.
   - Normally, I would leave them out, but there is an interesting argument for keeping them in. 
-  - Nami uses a different one for you on each playthrough, i.e. she may start with san but can switch to kun, chan, etc.
-  - Technically, you can classify the dynamic honorifics as a "game mechanic" of sorts.
+  - The original Japanese game has a "game mechanic" of sorts, where Nami uses a different honorific for you on each playthrough.
+  - For example, she may start with san but can switch to kun, chan, etc.
 
 # Submitting issues
 
-For general suggestions or any issues like bad formatting of game text, please create an issue in this repository, *with a screenshot* of where you found the issue.
+For general suggestions or any issues like bad formatting of game text, please contact me *with a screenshot* of where you found the issue. You can create an issue here, reply to the [RHDN forum post](https://www.romhacking.net/forum/index.php?topic=38663.0) I made for this project, or join the [RHDN Discord](https://discord.gg/uAufcgz) and contact me there.
 
 Issues in order from most severe to least concern (current priorities in *italics*; list will be added to as needed):
 - Game crash or softlock
@@ -75,7 +76,8 @@ Issues in order from most severe to least concern (current priorities in *italic
 - *Too many lines of text that overflow past the bottom of the screen*
 - *Text doesn't auto line break early enough, with a word overflowing past the right edge of the screen*
 - Text auto line breaks too early, when a word can fit in space after break
-- Control code mnemonics that slip through as visible text in the script, such as seeing a literal `<LINE 00>` instead of seeing a line break
+- Control code mnemonics that slip through as visible text in the script
+  - For example, seeing a literal `<LINE 00>` instead of seeing a line break
   - Similar, script comments that begin with `//` that sneak into the game script
 - Automatic "wait for player input" triggers too often on punctuation
 - Text kerning pairs that should have kerning but don't, or vice versa
