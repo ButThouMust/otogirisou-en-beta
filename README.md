@@ -3,8 +3,9 @@
 ![file select](images/02%20file%20select.png)    ![name entry](images/03%20name%20entry.png)
 
 # otogirisou-en-beta
-(Currently) beta patches for an English translation of Otogirisou for Super Famicom.
-The main bottleneck to a full release is getting the whole script translation peer-reviewed. **Please let me know if you would like to contribute to the translation!** (related [RHDN forum post](https://www.romhacking.net/forum/index.php?topic=38663.0))
+Currently beta patches for an English translation of Otogirisou for Super Famicom. The main bottleneck to a full release is getting the whole script translation peer-reviewed. **Please let me know if you would like to contribute to the translation!** (related [RHDN forum post](https://www.romhacking.net/forum/index.php?topic=38663.0))
+
+Note: This is a translation project independent of the one by Tom (RetroTranslator) and DDS, for which they released a patch on March 6, 2024. This is not to dismiss the quality of Tom's translations, but please do not send me suggestions for my translation based on their project. I do not want my project to become their translation with my hacks.
 
 **Patches from here are _not_ to be reuploaded to other sites, including but not limited to romhacking.net.**
 Note: I mean no ill will against romhacking.net with this. I simply don't want the patch to be uploaded/published anywhere else until it is finished.
@@ -53,7 +54,7 @@ The replayability for this game comes from the different paths you can take. Plu
 - An English translation I estimate to be 95% complete.
   - Translated and restored two screens of text that were unused/inaccessible in the original game.
 - A more aesthetically pleasing English font than what was originally in the game.
-  - Bypassing of the font compression scheme, to more easily add characters if needed.
+  - Bypassing of the font compression scheme, to more easily add/edit characters if needed.
   - Linebreaking logic that, while imperfect, is better suited for English text.
   - Text kerning, both horizontally and vertically.
 - Translation of all important graphics that contain Japanese text.
@@ -94,7 +95,7 @@ Issues in order from most severe to least concern (current priorities in *italic
 
 # Checklist of things to do
 - Make a more user-friendly option to enable or disable honorifics.
-  - Currently, this works by having two different patches.
+  - Currently, this works by having two different patches. So if you want to switch, you would have to keep two patched copies and rename your save data accordingly.
   - In the future, I'd like to make it so you can use the otherwise unused R button to enable or disable it.
 - Fill out the font more.
   - Please suggest any characters you'd like to be added.
