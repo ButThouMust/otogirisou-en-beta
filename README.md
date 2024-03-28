@@ -5,10 +5,11 @@
 # otogirisou-en-beta
 Currently beta patches for an English translation of Otogirisou for Super Famicom. The main bottleneck to a full release is getting the whole script translation peer-reviewed. **Please let me know if you would like to contribute to the translation!** (related [RHDN forum post](https://www.romhacking.net/forum/index.php?topic=38663.0))
 
-Note: This is a translation project independent of the one by Tom (RetroTranslator) and DDS, for which they released a patch on March 6, 2024. This is not to dismiss the quality of Tom's translations, but please do not send me suggestions for my translation based on their project. I do not want my project to become their translation with my hacks.
+**Patches from here are _not_ to be reuploaded to other sites, including but not limited to romhacking.net.** I will upload/submit the patch myself when it is complete, alongside all my notes, tools, etc.
 
-**Patches from here are _not_ to be reuploaded to other sites, including but not limited to romhacking.net.**
-Note: I mean no ill will against romhacking.net with this. I simply don't want the patch to be uploaded/published anywhere else until it is finished.
+This is a translation project independent of the one by Tom (RetroTranslator) and DDS, for which they released a patch on March 6, 2024.
+- I'm still working on mine because I had been working on it for about a year when they announced theirs.
+- This is not to dismiss the quality of their project, but please do not send me suggestions for my project based on their project (e.g. "they did X, you did Y, you should change Y to be more like X").
 
 # How to patch
 
@@ -20,11 +21,13 @@ SHA-1:   2c27b89a244abe941b6a9fceb1a674dbefd1f734
 SHA-256: d85b6764a35f4dcee3ab5843df1c467ebdfe5f02236043a4e466e6975a3f70ca
 ```
 
-Use any patching utility that supports the BPS format. It should produce a 1.5 MB file. I personally used the utility Floating IPS (available [here](https://www.romhacking.net/utilities/1040/)) to generate the patch.
+Two patches are included: one for honorifics on, and one for honorifics off (more details about this below). Use whichever patch you prefer, with any patching utility that supports the BPS format. It should produce a 1.5 MB file. I personally used the utility Floating IPS (available [here](https://www.romhacking.net/utilities/1040/)) to generate the patch.
 
 # How to play the game
 
-Otogirisou is a single player ~~visual~~ sound novel game from Chunsoft (now Spike Chunsoft). It was both their debut title as a game publisher, in 1992, and the first entry in their sound novel series. Other entries include Kamaitachi no Yoru, Machi, Imabikisou, and 428 Shibuya Scramble. The controls are fairly simple:
+Otogirisou is a single player sound novel game from Chunsoft (now Spike Chunsoft). It was both their debut title as a game publisher, in 1992, and the first entry in their sound novel series (Kamaitachi no Yoru, Machi, Imabikisou, and 428 Shibuya Scramble).
+
+The controls are fairly simple:
 - A: Confirm menu selection, advance text
 - B: Cancel menu selection, advance text
 - X: Scroll a page of text back, if available
@@ -34,13 +37,11 @@ Otogirisou is a single player ~~visual~~ sound novel game from Chunsoft (now Spi
 - Start: Only used on the title screen (advance to menus) and name entry screen (confirm entered name).
 - Select: Only used in the name entry menu. It brings you from the grid to the page selector, while preserving your grid position.
 
-You must first name the protagonist (up to 6 characters). He has no default name in the Super Famicom version but is named 公平 "Kouhei" by default in this game's PlayStation remake.
-
-The basic plot is that he and his girlfriend 奈美 "Nami" are driving home from a date, when circumstances force them to take shelter from a rainstorm in a creepy mansion in the middle of nowhere. It soon becomes apparent that some kind of presence inside clearly doesn't want them there.
+You must first name the protagonist (up to 6 characters). He has no default name in the Super Famicom version but is named 公平 "Kouhei" by default in this game's PlayStation remake. The basic plot is that Kouhei and his girlfriend 奈美 "Nami" are driving home from a date, when circumstances force them to take shelter from a rainstorm in a creepy mansion. It soon becomes apparent that some kind of presence inside clearly doesn't want them there.
 
 The gameplay, so to speak, consists of reading text and picking a choice from a list when the game presents you with a branching path. This continues until you reach one of several available endings. The game will automatically save your progress whenever you finish a screen of text or reach the credits.
 
-The replayability for this game comes from the different paths you can take. Plus, on repeat playthroughs, the game will sometimes present you with new options to pick for choices, which is to say, a choice you first found with two options may give you three or even four options later on.
+The replayability for this game comes from the different paths you can take, as well as the different endings you can view. Plus, on repeat playthroughs, the game will sometimes present you with new options to pick for choices, which is to say, a choice you first found with two options may give you three or even four options later on.
 
 > [!WARNING]
 > If you would like to carry over your save file to the next beta version, you must:
@@ -59,11 +60,11 @@ The replayability for this game comes from the different paths you can take. Plu
   - Text kerning, both horizontally and vertically.
 - Translation of all important graphics that contain Japanese text.
   - Title screen, credits, menu text, and one certain graphic in the story.
-  - Some graphics do have Japanese text but were kept as-is because the novel text explains them fine.
+  - There are a few graphics where their Japanese text was left alone because the novel text explains them fine.
 - Option to let the player enable or disable honorifics.
-  - Normally, I would leave them out, but there is an interesting argument for keeping them in. 
-  - The original Japanese game has a "game mechanic" of sorts, where Nami uses a different honorific for you on each playthrough.
-  - For example, she may start with san but can switch to kun, chan, etc.
+  - Normally, I would have left them out altogether, but there is an interesting argument for keeping them in. 
+  - The original Japanese game has a "game mechanic" where Nami uses a different honorific for you on each playthrough. For example, she may start with san but can switch to kun, chan, etc.
+  - If you want to see them when playing, great! However, I programmed this feature because I do recognize that some people prefer to leave them out.
 
 # Submitting issues
 
@@ -86,19 +87,21 @@ Issues in order from most severe to least concern (current priorities in *italic
 \*: I will eventually release the game script translation for people to consult on their own. There are still a bunch of notes in it like "rewrite this" or "is this translatable?"
 
 # Known issues
-- When presenting the player with a choice, the game recolors the choice option that is currently highlighted. This recoloring may also affect the bottom one or two pixel rows of adjacent choice options (in particular, see the tails of characters like `g`, `j`, or `y`).
-  - This is due to the shortened line leading (vertical distance between lines of text). While it allows for more text on screen (11 lines vs 9 lines), it makes the text not perfectly align with 8x8 tile boundaries.
-  - This is a harmless bug, and currently low priority for fixing.
 - Due to how kerning is currently implemented, the one place it does *not* occur is the protagonist's name.
 - I have not thoroughly tested the automatic line breaking while accounting for how you can name the protagonist `I`, `WWWWWW`, or something in between.
-- The font system technically supports characters that are 15 pixels tall, but Chunsoft seems to have coded parts of the game around how all the characters in their JP font were at most 14 pixels tall, with the vast majority being 13 or shorter.
 
 # Checklist of things to do
 - Make a more user-friendly option to enable or disable honorifics.
   - Currently, this works by having two different patches. So if you want to switch, you would have to keep two patched copies and rename your save data accordingly.
   - In the future, I'd like to make it so you can use the otherwise unused R button to enable or disable it.
-- Fill out the font more.
-  - Please suggest any characters you'd like to be added.
-- Set more consistent spacing on the file management prompts like `Start`, `Delete`, `Cancel`, `Confirm`, `Resume`, and `Restart`.
-- Fix the above mentioned choice recoloring issue.
 - Change the kerning implementation to allow for kerning in the player's name.
+- (Low priority) Set more consistent spacing on the file management prompts like `Start`, `Delete`, `Cancel`, `Confirm`, `Resume`, and `Restart`.
+
+# Project credits
+Alphabetical list of people who have contributed to this project, directly or indirectly, at some point:
+- ["Guest"](https://www.romhacking.net/community/695/): Creator of original tools (script/font dumpers) and notes in abandoned project "starter pack" on RHDN
+- Karu: Translation assistance
+- [Koitsu](https://www.romhacking.net/community/394/): Provided notes on game's font compression format and its VWF implementation
+- Lazermutt4: Translated two of the game's graphics, and pointed me to the font that I would use for the end credits
+- MLagaffe: Provided font for main text; suggested ideas for assembly hacks related to in-game text formatting
+- Squeaky: Translation assistance
