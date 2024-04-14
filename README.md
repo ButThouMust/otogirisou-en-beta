@@ -53,14 +53,16 @@ The replayability for this game comes from the different paths you can take, as 
 
 # Features added for patch
 - An English translation I estimate to be 95% complete.
-  - Translated and restored two screens of text that were unused/inaccessible in the original game.
 - A more aesthetically pleasing English font than what was originally in the game.
-  - Bypassing of the font compression scheme, to more easily add/edit characters if needed.
-  - Linebreaking logic that, while imperfect, is better suited for English text.
-  - Text kerning, both horizontally and vertically.
+  - Bypassing of the original game's font compression, to more easily add/edit characters if needed.
+  - Linebreaking logic that, while imperfect, is better suited for English text and cuts down lots of manual formatting.
+  - [Text kerning](https://en.wikipedia.org/wiki/Kerning), both horizontally and vertically.
 - Translation of all important graphics that contain Japanese text.
   - Title screen, credits, menu text, and one certain graphic in the story.
   - There are a few graphics where their Japanese text was left alone because the novel text explains them fine.
+- Restoration of some unused content in the game.
+  - Translated and restored two screens of text, plus another line, that were unused/inaccessible in the original game.
+  - Made an unused graphic in the game viewable, after I discovered it in the game's data.
 - Option to let the player enable or disable honorifics.
   - Normally, I would have left them out altogether, but there is an interesting argument for keeping them in. 
   - The original Japanese game has a "game mechanic" where Nami uses a different honorific for you on each playthrough. For example, she may start with san but can switch to kun, chan, etc.
@@ -102,6 +104,6 @@ Alphabetical list of people who have contributed to this project, directly or in
 - ["Guest"](https://www.romhacking.net/community/695/): Creator of original tools (script/font dumpers) and notes in abandoned project "starter pack" on RHDN
 - Karu: Translation assistance
 - [Koitsu](https://www.romhacking.net/community/394/): Provided notes on game's font compression format and its VWF implementation
-- Lazermutt4: Translated two of the game's graphics, and pointed me to the font that I would use for the end credits
+- [Lazermutt4](https://www.romhacking.net/community/7126/): Translated two of the game's graphics, and pointed me to the font that I would use for the end credits
 - MLagaffe: Provided font for main text; suggested ideas for assembly hacks related to in-game text formatting
-- Squeaky: Translation assistance
+- [Squeaky](https://www.romhacking.net/community/8301/): Translation assistance
