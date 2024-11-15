@@ -5,17 +5,18 @@
 # otogirisou-english
 Patches for an English translation of Otogirisou for Super Famicom. Although I would prefer the whole script translation to be peer-reviewed, I consider it good enough to have my tools and such available for download. There is only one line in the script that I couldn't figure out how to translate at all.
 
-For the time being, you can see all my source code, tools, etc. [here](https://github.com/ButThouMust/otogirisou-tools). However, I plan to combine it all into this particular repository both eventually and somehow.
+All my source code, tools, reverse engineering notes, etc. are available in [this repository](https://github.com/ButThouMust/otogirisou-tools), which is also included as a submodule here.
 
 **Please let me know** if you would like to contribute to the translation, or would like to use this project as a basis for translating the game to another language! (related [RHDN forum post](https://www.romhacking.net/forum/index.php?topic=38663.0))
 
-**Patches from here are _not_ to be reuploaded to other sites.**
+**Patch files from here are _not_ to be reuploaded to other sites without my
+permission.**
 
 This is a translation project independent of the one by Tom (RetroTranslator) and DDS, for which they released a patch on March 6, 2024.
 - This is not to dismiss the quality of their project, but please do not send me suggestions for my project based on theirs (e.g. "they did X, you did Y, you should change Y to be more like X").
 
 # How to patch
-Go to the [releases page](https://github.com/ButThouMust/otogirisou-en-beta/releases) to download the most recent patch version. You will need a legally obtained, unheadered 1 MB ROM image of the game, which has this specification in the [No-Intro database](https://datomatic.no-intro.org/index.php?page=show_record&s=49&n=1880):
+Go to the [releases page](https://github.com/ButThouMust/otogirisou-en-beta/releases) to download the most recent patch version. You will need a *legally obtained*, unheadered 1 MB ROM image of the game, which has this specification in the [No-Intro database](https://datomatic.no-intro.org/index.php?page=show_record&s=49&n=1880):
 ```
 CRC32:   8e4befd0
 MD5:     ae1e9c92d0b7e6dba6c6007d99c9c3f4
@@ -23,17 +24,16 @@ SHA-1:   2c27b89a244abe941b6a9fceb1a674dbefd1f734
 SHA-256: d85b6764a35f4dcee3ab5843df1c467ebdfe5f02236043a4e466e6975a3f70ca
 ```
 
-Two patches are included: one for honorifics on, and one for honorifics off (more details about this below). Use whichever patch you prefer, with any patching utility that supports the BPS format. It should produce a 1.5 MB file. I personally used the utility Floating IPS (available [here](https://www.romhacking.net/utilities/1040/)) to generate the patch.
+Two patches are included: one for honorifics on, and one for honorifics off (more details about this below). Use whichever patch you prefer, with any patching utility that supports the BPS format. It should produce a 1.5 MB file. I personally used the utility [Floating IPS](https://www.romhacking.net/utilities/1040/) to generate the patch.
 
 # How to play the game
 Otogirisou is a single player sound novel game from Chunsoft (now Spike Chunsoft). It was both their debut title as a game publisher, in 1992, and the first entry in their sound novel series (Kamaitachi no Yoru, Machi, Imabikisou, and 428 Shibuya Scramble).
 
 The controls are fairly simple:
-- A: Confirm menu selection, advance text
+- A/L: Confirm menu selection, advance text
 - B: Cancel menu selection, advance text
 - X: Scroll a page of text back, if available
 - Y: Scroll a page of text forward, if you have already scrolled back at least one page
-- L: Equivalent to A button
 - R: Unused
 - Start: Only used on the title screen (advance to menus) and name entry screen (confirm entered name).
 - Select: Only used in the name entry menu. It brings you from the grid to the page selector, while preserving your grid position.
@@ -66,8 +66,7 @@ Otogirisou's replayability comes from the different paths you can take, and the 
 - Option to let the player enable or disable honorifics.
   - Normally, I would have left them out altogether, but there is an interesting argument for keeping them in. 
   - The original Japanese game has a "game mechanic" where Nami uses a different honorific for you on each playthrough. For example, she may start with san but can switch to kun, chan, etc.
-  - In the spirit of the sound novel, I leave this decision up to you, the
-    player! :)
+  - In the spirit of the sound novel, I leave this decision up to you, the player! :)
 
 # Submitting issues
 For general suggestions or any issues like bad formatting of game text, please contact me *with a screenshot* of where you found the issue. You can create an issue here, reply to the [RHDN forum post](https://www.romhacking.net/forum/index.php?topic=38663.0) I made for this project, or join the [RHDN Discord](https://discord.gg/uAufcgz) and contact me there.
@@ -90,11 +89,12 @@ Issues in order from most severe to least concern (current priorities in *italic
 - Due to how kerning is currently implemented, the one place it does *not* occur is the protagonist's name.
 - I have not thoroughly tested the automatic line breaking while accounting for how you can name the protagonist `I`, `WWWWWW`, or something in between.
 
-# Checklist of things to do
+# Possible improvements
 - Make a more user-friendly option to enable or disable honorifics.
   - Currently, this works by having two different patches. So if you want to switch, you would have to keep two patched copies and rename your save data accordingly.
-  - In the future, I'd like to make it so you can use the otherwise unused R button to enable or disable it.
+  - One solution I had brainstormed was implementing the option through the otherwise unused R button.
 - Change the kerning implementation to allow for kerning in the player's name.
+- Make the automatic linebreaking logic more robust.
 
 # Project credits
 Alphabetical list of people who have contributed to this project, directly or indirectly, at some point:
@@ -105,4 +105,4 @@ Alphabetical list of people who have contributed to this project, directly or in
 - MLagaffe: Provided font for main text; suggested ideas for assembly hacks related to in-game text formatting
 - [Squeaky](https://www.romhacking.net/community/8301/): Translation assistance
 
-I would also like to mention the [Open Source Cartridge Reader](https://github.com/sanni/cartreader) project. Building one allowed me to test the translation patch on a real Super Nintendo with an SF Memory cartridge.
+I would also like to mention the [Open Source Cartridge Reader](https://github.com/sanni/cartreader) project. Building one allowed me to test the translation patch on a real Super Nintendo with an [SF Memory cartridge](https://en.wikipedia.org/wiki/Nintendo_Power_(cartridge)).
